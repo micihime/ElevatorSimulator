@@ -5,12 +5,16 @@
         private const int MAX_FLOOR = 10;
 
         private int currentFloor;
+        private int peopleInside;
 
         public int CurrentFloor => currentFloor;
+
+        public int PeopleInside => peopleInside;
 
         public Elevator()
         {
             this.currentFloor = 1;
+            this.peopleInside = 0;
         }
 
         public void Call(int userFloor) // Call the elevator to the user's floor
