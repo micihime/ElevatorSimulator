@@ -18,6 +18,13 @@
             this.peopleInside = 0;
         }
 
+        public void Status() // Elevator status
+        {
+            Console.WriteLine("ELEVATOR STATUS");
+            Console.WriteLine($"Currently on the floor: {currentFloor}.");
+            Console.WriteLine($"People inside {peopleInside}.");
+        }
+
         public void Call(int userFloor) // Call the elevator to the user's floor
         {
             if (userFloor < MIN_FLOOR || userFloor > MAX_FLOOR)
