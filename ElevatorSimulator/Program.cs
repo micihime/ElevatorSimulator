@@ -2,7 +2,9 @@
 Console.WriteLine("Welcome to Elevator Simulator!");
 
 ElevatorSimulator.Elevator elevator = new ElevatorSimulator.Elevator();
+
 elevator.Call(5);
+elevator.GetIn();
 
 Console.WriteLine("Simulation finished!");
 Console.ReadLine();

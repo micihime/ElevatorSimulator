@@ -43,5 +43,11 @@
 
             Console.WriteLine($"Stopping at the floor: {currentFloor}");
         }
+
+        public void GetIn() // Enter the elevator
+        {
+            peopleInside++;
+            Console.WriteLine($"People inside {peopleInside}.");
+        }
     }
 }
