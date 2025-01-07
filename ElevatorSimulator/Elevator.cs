@@ -25,7 +25,7 @@
             Console.WriteLine($"People inside {peopleInside}.");
         }
 
-        public void GoTo(int userFloor) // Call the elevator to the user's floor
+        public void GoTo(int userFloor) // Go to specified floor
         {
             if (userFloor < MIN_FLOOR || userFloor > MAX_FLOOR)
             {
@@ -55,6 +55,18 @@
         public void GetIn() // Enter the elevator
         {
             peopleInside++;
+            Console.WriteLine($"People inside {peopleInside}.");
+        }
+
+        public void GetOut() // Exit the elevator
+        {
+            if (peopleInside == 0)
+            {
+                Console.WriteLine("Error! There is nobody in the elevator.");
+                return;
+            }
+
+            peopleInside--;
             Console.WriteLine($"People inside {peopleInside}.");
         }
     }
