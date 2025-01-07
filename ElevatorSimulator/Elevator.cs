@@ -24,7 +24,7 @@
         {
             Console.WriteLine("ELEVATOR STATUS");
             Console.WriteLine($"Currently on the floor: {currentFloor}.");
-            Console.WriteLine($"People inside {peopleInside}.");
+            Console.WriteLine($"People inside: {peopleInside}.");
         }
 
         private void GoTo(int userFloor) // Go to specified floor
@@ -62,6 +62,7 @@
                 return;
             }
 
+            Console.WriteLine($"Elevator called to floor {floor}.");
             GoTo(floor);
         }
 
@@ -73,6 +74,7 @@
                 return;
             }
 
+            Console.WriteLine($"Elevator starting on floor {floor} with {peopleInside} people.");
             GoTo(floor);
         }
 
@@ -84,8 +86,9 @@
                 return;
             }
 
+            Console.WriteLine($"A person getting in.");
             peopleInside++;
-            Console.WriteLine($"People inside {peopleInside}.");
+            Console.WriteLine($"People inside: {peopleInside}.");
         }
 
         public void GetOut() // Exit the elevator
@@ -96,8 +99,9 @@
                 return;
             }
 
+            Console.WriteLine($"A person getting out.");
             peopleInside--;
-            Console.WriteLine($"People inside {peopleInside}.");
+            Console.WriteLine($"People inside: {peopleInside}.");
         }
 
         public void GoToDefault() // Go to default position
@@ -108,6 +112,7 @@
                 return;
             }
 
+            Console.WriteLine("Going to default position.");
             GoTo(MIN_FLOOR);
         }
     }
