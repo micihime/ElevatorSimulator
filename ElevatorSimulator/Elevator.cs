@@ -25,7 +25,7 @@
             Console.WriteLine($"People inside {peopleInside}.");
         }
 
-        public void Call(int userFloor) // Call the elevator to the user's floor
+        public void GoTo(int userFloor) // Call the elevator to the user's floor
         {
             if (userFloor < MIN_FLOOR || userFloor > MAX_FLOOR)
             {
@@ -46,7 +46,7 @@
                     currentFloor--;
                 }
 
-                Console.WriteLine($"Passing through floor {currentFloor}...");
+                Console.WriteLine($"Going to the floor {currentFloor}...");
             }
 
             Console.WriteLine($"Stopping at the floor: {currentFloor}");
