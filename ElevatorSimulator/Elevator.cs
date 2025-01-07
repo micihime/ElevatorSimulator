@@ -69,5 +69,16 @@
             peopleInside--;
             Console.WriteLine($"People inside {peopleInside}.");
         }
+
+        public void GoToDefault() // Go to default position
+        {
+            if (currentFloor == MIN_FLOOR)
+            {
+                Console.WriteLine("Already in default position.");
+                return;
+            }
+
+            GoTo(MIN_FLOOR);
+        }
     }
 }
