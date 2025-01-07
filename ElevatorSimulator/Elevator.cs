@@ -2,6 +2,7 @@
 {
     public class Elevator
     {
+        private const int MIN_FLOOR = 1;
         private const int MAX_FLOOR = 10;
 
         private int currentFloor;
@@ -13,15 +14,15 @@
 
         public Elevator()
         {
-            this.currentFloor = 1;
+            this.currentFloor = MIN_FLOOR;
             this.peopleInside = 0;
         }
 
         public void Call(int userFloor) // Call the elevator to the user's floor
         {
-            if (userFloor < 1 || userFloor > MAX_FLOOR)
+            if (userFloor < MIN_FLOOR || userFloor > MAX_FLOOR)
             {
-                Console.WriteLine($"Error! Please choose a floor between 1 and {MAX_FLOOR}.");
+                Console.WriteLine($"Error! Please choose a floor between {MIN_FLOOR} and {MAX_FLOOR}.");
                 return;
             }
 
