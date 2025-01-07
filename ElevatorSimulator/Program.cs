@@ -8,6 +8,13 @@ elevator.GetIn();
 elevator.GoTo(7);
 elevator.GetOut();
 elevator.GoToDefault();
+Console.WriteLine("");
+
+// ERRORS
+elevator.GoTo(-2);
+elevator.GoTo(12);
+elevator.GetOut();
+elevator.GoToDefault();
 
 Console.WriteLine("");
 Console.WriteLine("Simulation finished!");
