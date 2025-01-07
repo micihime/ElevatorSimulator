@@ -15,6 +15,13 @@ elevator.GoTo(-2);
 elevator.GoTo(12);
 elevator.GetOut();
 elevator.GoToDefault();
+elevator.GetIn();
+elevator.GetIn();
+elevator.GetIn();
+elevator.GetIn();
+elevator.GetIn();
+elevator.GetIn();
+
 
 Console.WriteLine("");
 Console.WriteLine("Simulation finished!");

@@ -5,6 +5,8 @@
         private const int MIN_FLOOR = 1;
         private const int MAX_FLOOR = 10;
 
+        private const int CAPACITY = 5;
+
         private int currentFloor;
         private int peopleInside;
 
@@ -54,6 +56,12 @@
 
         public void GetIn() // Enter the elevator
         {
+            if (peopleInside == CAPACITY)
+            {
+                Console.WriteLine("Error! Elevator at full capacity.");
+                return;
+            }
+
             peopleInside++;
             Console.WriteLine($"People inside {peopleInside}.");
         }
