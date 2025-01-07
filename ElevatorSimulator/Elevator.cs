@@ -102,9 +102,12 @@
             Console.WriteLine($"A person getting out.");
             peopleInside--;
             Console.WriteLine($"People inside: {peopleInside}.");
+
+            if (peopleInside == 0)
+                GoToDefault();
         }
 
-        public void GoToDefault() // Go to default position
+        private void GoToDefault() // Go to default position
         {
             if (currentFloor == MIN_FLOOR)
             {
