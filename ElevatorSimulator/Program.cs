@@ -3,25 +3,12 @@ Console.WriteLine("");
 
 ElevatorSimulator.Elevator elevator = new ElevatorSimulator.Elevator();
 
-elevator.GoTo(5);
+elevator.Call(5);
 elevator.GetIn();
-elevator.GoTo(7);
+elevator.TravelWith(7);
 elevator.GetOut();
 elevator.GoToDefault();
 Console.WriteLine("");
-
-// ERRORS
-elevator.GoTo(-2);
-elevator.GoTo(12);
-elevator.GetOut();
-elevator.GoToDefault();
-elevator.GetIn();
-elevator.GetIn();
-elevator.GetIn();
-elevator.GetIn();
-elevator.GetIn();
-elevator.GetIn();
-
 
 Console.WriteLine("");
 Console.WriteLine("Simulation finished!");

@@ -27,7 +27,7 @@
             Console.WriteLine($"People inside {peopleInside}.");
         }
 
-        public void GoTo(int userFloor) // Go to specified floor
+        private void GoTo(int userFloor) // Go to specified floor
         {
             if (userFloor < MIN_FLOOR || userFloor > MAX_FLOOR)
             {
@@ -52,6 +52,28 @@
             }
 
             Console.WriteLine($"Stopping at the floor: {currentFloor}");
+        }
+
+        public void Call(int floor) // Call an elevator to my floor
+        {
+            if (peopleInside > 0)
+            {
+                Console.WriteLine("Error! Somebody is using the elevator, wait and try later.");
+                return;
+            }
+
+            GoTo(floor);
+        }
+
+        public void TravelWith(int floor) // Go with elevator to a specified floor
+        {
+            if (peopleInside == 0)
+            {
+                Console.WriteLine("Error! You have to call the elevator and get in first.");
+                return;
+            }
+
+            GoTo(floor);
         }
 
         public void GetIn() // Enter the elevator
