@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using InstagramDelegates;
+
+Instagram instagram = new Instagram();
+instagram.ProcessPhoto(new Photo());
