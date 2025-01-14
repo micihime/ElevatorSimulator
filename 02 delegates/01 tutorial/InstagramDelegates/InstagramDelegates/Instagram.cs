@@ -2,13 +2,12 @@
 {
     internal class Instagram
     {
-        // Tieto tri filtre sú natvrdo nakódované - bez možnosti dynamického prispôsobenia.
-        internal void ProcessPhoto(Photo photo) 
-        { 
-            InstagramFilter filter = new InstagramFilter();
-            filter.RemoveRedEyes(photo);
-            filter.Beautify(photo);
-            filter.Retouch(photo);
+        public delegate void InstagramFilterHandler(Photo photo);
+
+        // Výber filtrov je ponechaný na klientovi, čo umožňuje väčšiu flexibilitu, ale zároveň vyžaduje správne používanie na strane klienta.
+        internal void ProcessPhoto(Photo photo, InstagramFilterHandler filterHandler) 
+        {
+            filterHandler(photo);
         }
     }
 }

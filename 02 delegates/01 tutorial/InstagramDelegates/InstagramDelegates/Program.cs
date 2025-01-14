@@ -1,4 +1,9 @@
 ﻿using InstagramDelegates;
 
 Instagram instagram = new Instagram();
-instagram.ProcessPhoto(new Photo());
+
+InstagramFilter filter = new InstagramFilter();
+
+Instagram.InstagramFilterHandler handler = filter.Beautify;
+
+instagram.ProcessPhoto(new Photo(), handler);
