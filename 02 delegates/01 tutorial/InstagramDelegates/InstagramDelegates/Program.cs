@@ -8,7 +8,7 @@ internal class Program
 
         InstagramFilter filter = new InstagramFilter();
 
-        Instagram.InstagramFilterHandler handler = filter.RemoveRedEyes;
+        Action<Photo> handler = filter.RemoveRedEyes;
         handler += filter.Beautify;
         handler += filter.Retouch;
         handler += Program.NewCustomFilter;
