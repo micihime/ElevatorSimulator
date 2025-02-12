@@ -7,9 +7,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IConferenceRepository, ConferenceRepository>();
 builder.Services.AddScoped<IProposalRepository, ProposalRepository>();
 
+builder.Services.AddAuthentication()
+            .AddCookie();
 
 var app = builder.Build();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseSwagger();
