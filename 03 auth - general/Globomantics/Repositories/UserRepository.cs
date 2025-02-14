@@ -17,4 +17,11 @@ public class UserRepository : IUserRepository
             u => u.Name == username && u.Password == password.Sha256());
         return user;
     }
+
+    public UserModel? GetByGoogleId(string googleId)
+    {
+        var user = users.SingleOrDefault(
+            u => u.GoogleId == googleId);
+        return user;
+    }
 }
