@@ -1,3 +1,4 @@
+using Globomantics;
 using Globomantics.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
@@ -13,11 +14,14 @@ builder.Services.AddSingleton<IUserRepository, UserRepository>();
 
 builder.Services.AddAuthentication(o => {
     o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    //o.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;           
 })
     .AddCookie()
+    .AddCookie(ExternalAuthenticationDefaults.AuthenticationScheme)
+    //.AddTwitter(...)  //add another external provider
     .AddGoogle(o =>
     {
+        o.SignInScheme =
+            ExternalAuthenticationDefaults.AuthenticationScheme;
         o.ClientId = "686977813024-d9i87jqqovj5tu5luks9rk8gl33ck3rb.apps.googleusercontent.com";
         o.ClientSecret = "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";
     });
